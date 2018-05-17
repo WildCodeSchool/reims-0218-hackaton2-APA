@@ -6,25 +6,35 @@ class StarLover extends Component {
     constructor() {
         super()
         this.state = {
+            loading: true, //affichage conditionnel
             starlover: {
-                name: 'Loading...'
+                name: ''
             }
         }
     }
     //on ajoute StarLover à Component / on surcharge 
     render() {
-        return <div> StarLover: {this.state.starlover.name}</div>
+        return <div> 
+            { this.state.loading && <p>Loading</p> }
+            <p>StarLover: {this.state.starlover.name}</p>
+        </div>
     }
-
+             
     //on fait l'appel à l'API lorsque que le composant StarLover est présent dans App.js
     componentDidMount() {
         console.log(`nous sommes connectés à l'API`)
         const url = 'https://akabab.github.io/starwars-api/api/id/1.json'
         fetch(url)
         .then(res => res.json())
-        .then(starwarsRes => this.setState(
-            prevState => ({ starlover: starwarsRes })
-        ))
+        .then(starwarsRes => {
+            console.log(starwarsRes)
+            return this.setState(
+            prevState => ({ 
+                loading: false,
+                starlover: starwarsRes
+            })
+        )})
     }
 }
+
 export default StarLover
