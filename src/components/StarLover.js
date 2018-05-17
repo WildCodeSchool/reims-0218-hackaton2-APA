@@ -1,17 +1,30 @@
 import React, { Component } from 'react'
-import { ListGroupItem } from 'reactstrap'
+//import { ListGroupItem } from 'reactstrap'
 
 class StarLover extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            starlover: {
+                name: 'Loading...'
+            }
+        }
+    }
+    //on ajoute StarLover à Component / on surcharge 
     render() {
-        return <ListGroupItem>StarLover</ListGroupItem>
+        return <div> StarLover: {this.state.starlover.name}</div>
     }
 
+    //on fait l'appel à l'API lorsque que le composant StarLover est présent dans App.js
     componentDidMount() {
         console.log(`nous sommes connectés à l'API`)
-        const url = 'https://akabab.github.io/starwars-api/api/all.json'
+        const url = 'https://akabab.github.io/starwars-api/api/id/1.json'
         fetch(url)
         .then(res => res.json())
-        .then(starwars => console.log(starwars))
+        .then(starwarsRes => this.setState(
+            prevState => ({ starlover: starwarsRes })
+        ))
     }
 }
 export default StarLover
