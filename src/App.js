@@ -18,8 +18,8 @@ class App extends Component {
     this.state= {
       gender : '',
       specie: '',
-      eyeColor: '',
-      skinColor:''
+      eye: '',
+      skin:''
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
@@ -59,7 +59,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin/>
+        <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
         <StarWarsApi />
         <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
         <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
