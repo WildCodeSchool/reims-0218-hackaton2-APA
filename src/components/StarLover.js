@@ -8,6 +8,10 @@ class StarLover extends Component {
 
     componentDidMount() {
         console.log(`nous sommes connectés à l'API`)
+        const url = 'https://akabab.github.io/starwars-api/api/all.json'
+        fetch(url)
+        .then(res => res.json())
+        .then(starwars => console.log(starwars))
     }
 }
 export default StarLover
