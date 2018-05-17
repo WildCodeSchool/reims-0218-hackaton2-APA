@@ -87,10 +87,10 @@ class App extends Component {
         <Container className="py-3">
           <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
           <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
-          <ChoiceEye change={this.changeEye} eye={this.state.eye}/>
-          <ChoiceSkin change={this.changeSkin} skin={this.state.skin}/>
-          <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
-          <AllChoices change={this.changeChoice} choice={this.state.choice} gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
+          <ChoiceEye dropdownEyeOpen={this.state.dropDownEyeOpen} toggleEyeFunction={this.toggleEye} changeEye={this.changeEye}/>
+          <ChoiceSkin dropdownSkinOpen={this.state.dropDownSkinOpen} toggleSkinFunction={this.toggleSkin} changeSkin={this.changeSkin}/>
+          <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eyeColor} skin={this.state.skinColor}/>
+          <AllChoices change={this.changeChoice} choice={this.state.choice} gender={this.state.gender} specie={this.state.specie} eye={this.state.eyeColor} skin={this.state.skinColor}/>
         </Container>
       </div>
     );
