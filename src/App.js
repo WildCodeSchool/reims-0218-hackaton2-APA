@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
+import logostarwars from "./images/logostarwars.png"
 import "./App.css";
+//import { Button } from 'reactstrap';
 //import StarLover from './components/StarLover';
 import ChoiceGender from "./components/ChoiceGender";
 import ChoiceSpecie from "./components/ChoiceSpecie";
-import StarWarsApi from "./components/Article";
+import AllChoices from "./components/AllChoices";
 import ListChoices from "./components/ListChoices";
-import {ChoiceEye, ChoiceSkin} from "./components/ChoiceColors";
+import {ChoiceEye, ChoiceSkin} from "./components/ChoiceEye";
 
 
 
@@ -18,8 +20,9 @@ class App extends Component {
     this.state= {
       gender : '',
       specie: '',
-      eyeColor: '',
-      skinColor:''
+      eye: '',
+      skin:'',
+      choice:[]
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
@@ -49,6 +52,12 @@ class App extends Component {
     })
   }
 
+  changeChoice(choice) {
+    this.setState ({
+      choice: choice
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -56,15 +65,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <ListChoices />
-        <StarWarsApi />
+        <img src={logostarwars} alt="logostarwars" style={{width: '750px', height: '250px'}} />
+       
         <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
         <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
         <ChoiceEye change={this.changeEye} eye={this.state.eye}/>
         <ChoiceSkin change={this.changeSkin} skin={this.state.skin}/>
+        <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
+        <AllChoices change={this.changeChoice} choice={this.state.choice} gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
       </div>
     );
   }
