@@ -9,7 +9,6 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-
 it('renders correctly', () => {
   const tree = renderer
     .create(<Article />)

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import StarLover from './Article';
+import StarLover from './StarLover';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -9,10 +9,10 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-
 it('renders correctly', () => {
   const tree = renderer
     .create(<StarLover />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
