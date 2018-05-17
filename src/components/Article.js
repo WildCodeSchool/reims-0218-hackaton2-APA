@@ -1,6 +1,7 @@
 import React from 'react'
+import { ListGroupItem } from 'reactstrap'
 
-const Article = () => <div>Article</div>
+const Article = () => <ListGroupItem>Article</ListGroupItem>
 
 export default Article
 
