@@ -2,50 +2,13 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 //import StarLover from './components/StarLover';
-import ListStarLover from "./components/ListStarLover";
 import ChoiceGender from "./components/ChoiceGender";
 import ChoiceSpecie from "./components/ChoiceSpecie";
 import StarWarsApi from "./components/Article";
 import ListChoices from "./components/ListChoices";
+import {ChoiceEye, ChoiceSkin} from "./components/ChoiceColors";
 
-const data = [
-  {
-    id: 0,
-    name: "MONSIEUR TARTE",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  },
-  {
-    id: 1,
-    name: "MONSIEUR FISCHER",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  },
-  {
-    id: 2,
-    name: "MONSIEUR DESCHAMPS",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  },
-  {
-    id: 3,
-    name: "MONSIEUR LUKE",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  }
-];
+
 
 
 
@@ -54,7 +17,9 @@ class App extends Component {
     super()
     this.state= {
       gender : '',
-      specie: ''
+      specie: '',
+      eyeColor: '',
+      skinColor:''
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
@@ -72,6 +37,18 @@ class App extends Component {
     })
   }
 
+  changeEye(eye) {
+    this.setState ({
+      eye: eye
+    })
+  }
+
+  changeSkin(skin) {
+    this.setState ({
+      skin: skin
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -85,10 +62,9 @@ class App extends Component {
         <ListChoices />
         <StarWarsApi />
         <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
-        <ChoiceSpecie change={this.changeSpecie} gender={this.state.specie} />
-        <ListStarLover data={data}/>
-
-        
+        <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
+        <ChoiceEye change={this.changeEye} eye={this.state.eye}/>
+        <ChoiceSkin change={this.changeSkin} skin={this.state.skin}/>
       </div>
     );
   }
