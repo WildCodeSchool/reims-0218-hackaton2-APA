@@ -1,7 +1,20 @@
-import React from 'react'
-import { ListGroupItem } from 'reactstrap'
+import React, { Component } from 'react'
 
-const Article = () => <ListGroupItem>Article</ListGroupItem>
+class StarWarsApi extends Component {
 
-export default Article
+  render() {
+    return <div>StarLover:</div>
+  }
+
+  componentDidMount() {
+    console.log('StarLover did mount')
+    const url = 'https://akabab.github.io/starwars-api/api/all.json'
+    fetch(url)
+    .then(res => res.json())
+    .then(starwars => console.log(starwars))
+  }
+}
+
+
+export default StarWarsApi
 
