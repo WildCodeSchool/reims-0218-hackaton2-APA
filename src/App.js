@@ -53,14 +53,22 @@ class App extends Component {
   constructor() {
     super()
     this.state= {
-      gender : ''
+      gender : '',
+      specie: ''
     }
     this.changeGender= this.changeGender.bind(this)
+    this.changeSpecie= this.changeSpecie.bind(this)
   }
 
   changeGender(gender) {
     this.setState ({
       gender: gender
+    })
+  }
+
+  changeSpecie(specie) {
+    this.setState ({
+      specie: specie
     })
   }
 
@@ -77,10 +85,10 @@ class App extends Component {
         <ListChoices />
         <StarWarsApi />
         <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
-        <ChoiceSpecie />
+        <ChoiceSpecie change={this.changeSpecie} gender={this.state.specie} />
         <ListStarLover data={data}/>
-      
 
+        
       </div>
     );
   }

@@ -1,44 +1,15 @@
-import React,{Component} from 'react'
+import React from 'react'
 
-class ChoiceSpecie extends Component {
-  constructor() {
-    super()
-    this.state= {
-      type : ''
-    }
-  }
 
-  displayHuman(){
-    console.log('human')
-    //modifier le state
-    this.setState(
-      { specie : this.state.type}
-    )
-  }
-  displayDroid(){
-    console.log('droid')
-      //modifier le state
-      this.setState(
-      { type : this.state.type}
-    )
-    
-  }
+const ChoiceSpecie = ({change, specie}) => 
+<div>
+<p>Specie :{specie}</p>
+<button onClick={ () => change('Human') }
+  >Human</button>
+  <button onClick={ () => change('Droid') }
+  >Droid</button>
 
-  render(){
-      return(
-        <div>
-          <p>Specie :{this.state.type}</p>
-          <button onClick={ () => this.setState({
-            type : " Human"
-          })}
-            >Human</button>
-          <button onClick={ () => this.setState({
-            type : " Droid"
-          })}
-          >Droid</button>
-          </div>
-      );
-  }
+</div>
 
-}
+
 export default ChoiceSpecie;
