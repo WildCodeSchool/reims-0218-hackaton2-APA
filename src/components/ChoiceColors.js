@@ -36,8 +36,8 @@ export class ChoiceEye extends Component {
 }
 
 export class ChoiceSkin extends Component {
-  constructor(props) {
-    super(props);
+  constructor({ src }) {
+    super( {src} );
 
     this.toggle = this.toggle.bind(this);
     this.state = {

@@ -11,9 +11,9 @@ class App extends Component {
   constructor () {
     super()
     this.state={
-      choices: {
+      choice: {
         gender: "female",
-        species: "human"
+        eyeColor: "Red"
       },
       lovers: [
         {
@@ -69,8 +69,8 @@ class App extends Component {
         </p>
         <ChoiceGender />
         <ListStarLover data={this.state.lovers}/>
-        <ChoiceEye />
-        <ChoiceSkin />
+        <ChoiceEye src={this.state.choice}/>
+        <ChoiceSkin src={this.state.choice}/>
       </div>
     );
   }
