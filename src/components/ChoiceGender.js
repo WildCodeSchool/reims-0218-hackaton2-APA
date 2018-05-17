@@ -5,7 +5,7 @@ const ChoiceGender = ({change, gender}) =>
 <p>Gender :{gender}</p>
 <button onClick={ () => change('male') }
   >Male</button>
-  <button onClick={ () => change('female') }
+<button onClick={ () => change('female') }
   >Female</button>
 
 </div>
