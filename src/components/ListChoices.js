@@ -2,10 +2,10 @@ import React from 'react'
 import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 const ListChoices = ({gender, specie, skin, eye }) => 
-    <Row>
+    <Row className="mb-2 mt-2 justify-content-center">
       <Col sm="6">
-        <Card body>
-          <CardTitle>Ton amour intergalactique sera: </CardTitle>
+        <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+          <CardTitle>Ta liste de critères: </CardTitle>
           <CardText>{gender} <br/>
                     {specie} <br/>
                     {eye} <br/>
