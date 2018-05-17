@@ -26,3 +26,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+body{
+  background-image:url("/stars_sky_night_113553_3100x1740.jpg");
+  font-family: 'Star Jedi Outline';
+}
+
