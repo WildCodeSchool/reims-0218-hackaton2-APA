@@ -7,7 +7,7 @@ class StarLover extends Component {
     }
 
     componentDidMount() {
-        
+        console.log(`nous sommes connectés à l'API`)
     }
 }
 export default StarLover
