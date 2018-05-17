@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 const ListChoices = ({gender, specie, skin, eye }) => 
     <Row>
@@ -11,7 +11,6 @@ const ListChoices = ({gender, specie, skin, eye }) =>
                     {eye} <br/>
                     {skin} <br/>
           </CardText>
-          <Button>Go somewhere</Button>
         </Card>
       </Col>
     </Row>
