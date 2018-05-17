@@ -4,47 +4,59 @@ import "./App.css";
 //import StarLover from './components/StarLover';
 import ListStarLover from "./components/ListStarLover";
 import ChoiceGender from "./components/ChoiceGender";
-
-const data = [
-  {
-    id: 0,
-    name: "MONSIEUR TARTE",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  },
-  {
-    id: 1,
-    name: "MONSIEUR FISCHER",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  },
-  {
-    id: 2,
-    name: "MONSIEUR DESCHAMPS",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  },
-  {
-    id: 3,
-    name: "MONSIEUR LUKE",
-    gender: "male",
-    species: "human",
-    hairColor: "blond",
-    eyeColor: "blue",
-    skinColor: "light"
-  }
-];
+import {ChoiceEye, ChoiceSkin} from "./components/ChoiceColors";
 
 class App extends Component {
+  
+  constructor () {
+    super()
+    this.state={
+      choices: {
+        gender: "female",
+        species: "human"
+      },
+      lovers: [
+        {
+          id: 0,
+          name: "MONSIEUR TARTE",
+          gender: "male",
+          species: "human",
+          hairColor: "blond",
+          eyeColor: "blue",
+          skinColor: "light"
+        },
+        {
+          id: 1,
+          name: "MONSIEUR FISCHER",
+          gender: "male",
+          species: "human",
+          hairColor: "blond",
+          eyeColor: "blue",
+          skinColor: "light"
+        },
+        {
+          id: 2,
+          name: "MONSIEUR DESCHAMPS",
+          gender: "male",
+          species: "human",
+          hairColor: "blond",
+          eyeColor: "blue",
+          skinColor: "light"
+        },
+        {
+          id: 3,
+          name: "MONSIEUR LUKE",
+          gender: "male",
+          species: "human",
+          hairColor: "blond",
+          eyeColor: "blue",
+          skinColor: "light"
+        }
+      ]
+
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -56,8 +68,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <ChoiceGender />
-        <ListStarLover data={data}/>
-        <ChoiceGender />
+        <ListStarLover data={this.state.lovers}/>
+        <ChoiceEye />
+        <ChoiceSkin />
       </div>
     );
   }
