@@ -6,7 +6,7 @@ import ChoiceGender from "./components/ChoiceGender";
 import ChoiceSpecie from "./components/ChoiceSpecie";
 import StarWarsApi from "./components/Article";
 import ListChoices from "./components/ListChoices";
-import {ChoiceEye, ChoiceSkin} from "./components/ChoiceColors";
+import {ChoiceEye, ChoiceSkin} from "./components/ChoiceEye";
 
 
 
@@ -59,7 +59,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <ListChoices />
+        <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin/>
         <StarWarsApi />
         <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
         <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />

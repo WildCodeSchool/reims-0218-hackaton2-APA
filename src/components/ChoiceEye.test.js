@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import {ChoiceEye, ChoiceSkin} from "./ChoiceColors";
+import {ChoiceEye, ChoiceSkin} from "./ChoiceEye";
 
 it('renders Eye without crashing', () => {
   const divEye = document.createElement('div');

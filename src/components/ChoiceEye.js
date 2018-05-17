@@ -18,9 +18,11 @@ export class ChoiceEye extends Component {
   }
 
   render() {
+
+    //this.props.changeEye(val)
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>
+        <DropdownToggle caret color="primary">
           Eye Color
         </DropdownToggle>
         <DropdownMenu>
