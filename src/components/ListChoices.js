@@ -1,5 +1,5 @@
 import React from 'react'
 
-const ListChoices = () => <div>ListChoices</div>
+const ListChoices = ({gender}) => <div>ListChoices{gender} </div>
 
 export default ListChoices;
