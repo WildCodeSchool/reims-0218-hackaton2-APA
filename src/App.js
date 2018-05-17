@@ -8,9 +8,9 @@ import ChoiceGender from "./components/ChoiceGender";
 import ChoiceSpecie from "./components/ChoiceSpecie";
 import AllChoices from "./components/AllChoices";
 import ListChoices from "./components/ListChoices";
-import {ChoiceEye, ChoiceSkin} from "./components/ChoiceEye";
-
-
+import ChoiceEye from "./components/ChoiceEye";
+import ChoiceSkin from "./components/ChoiceSkin";
+import { Container } from 'reactstrap'
 
 
 
@@ -20,12 +20,18 @@ class App extends Component {
     this.state= {
       gender : '',
       specie: '',
-      eye: '',
-      skin:'',
+      eyeColor: '',
+      skinColor:'',
+      dropDownEyeOpen:false,
+      dropDownSkinOpen:false,
       choice:[]
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
+    this.changeEye=this.changeEye.bind(this)
+    this.changeSkin=this.changeSkin.bind(this)
+    this.toggleEye=this.toggleEye.bind(this)
+    this.toggleSkin=this.toggleSkin.bind(this)
   }
 
   changeGender(gender) {
@@ -52,6 +58,18 @@ class App extends Component {
     })
   }
 
+  toggleEye() {
+    this.setState(prevState => ({
+        dropdownEyeOpen: !prevState.dropdownEyeOpen
+      }))
+  }
+
+  toggleSkin() {
+    this.setState(prevState => ({
+        dropdownSkinOpen: !prevState.dropdownSkinOpen
+      }))
+  }
+  
   changeChoice(choice) {
     this.setState ({
       choice: choice
@@ -66,13 +84,14 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <img src={logostarwars} alt="logostarwars" style={{width: '750px', height: '250px'}} />
-       
-        <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
-        <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
-        <ChoiceEye change={this.changeEye} eye={this.state.eye}/>
-        <ChoiceSkin change={this.changeSkin} skin={this.state.skin}/>
-        <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
-        <AllChoices change={this.changeChoice} choice={this.state.choice} gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
+        <Container className="py-3">
+          <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
+          <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
+          <ChoiceEye dropdownEyeOpen={this.state.dropDownEyeOpen} toggleEyeFunction={this.toggleEye} changeEye={this.changeEye}/>
+          <ChoiceSkin dropdownSkinOpen={this.state.dropDownSkinOpen} toggleSkinFunction={this.toggleSkin} changeSkin={this.changeSkin}/>
+          <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eyeColor} skin={this.state.skinColor}/>
+          <AllChoices change={this.changeChoice} choice={this.state.choice} gender={this.state.gender} specie={this.state.specie} eye={this.state.eyeColor} skin={this.state.skinColor}/>
+        </Container>
       </div>
     );
   }
