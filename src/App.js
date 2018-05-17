@@ -5,6 +5,8 @@ import "./App.css";
 import ListStarLover from "./components/ListStarLover";
 import ChoiceGender from "./components/ChoiceGender";
 import ChoiceSpecie from "./components/ChoiceSpecie";
+import StarWarsApi from "./components/Article";
+import ListChoices from "./components/ListChoices";
 
 const data = [
   {
@@ -45,7 +47,23 @@ const data = [
   }
 ];
 
+
+
 class App extends Component {
+  constructor() {
+    super()
+    this.state= {
+      gender : ''
+    }
+    this.changeGender= this.changeGender.bind(this)
+  }
+
+  changeGender(gender) {
+    this.setState ({
+      gender: gender
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -56,10 +74,13 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <ChoiceGender />
+        <ListChoices />
+        <StarWarsApi />
+        <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
         <ChoiceSpecie />
         <ListStarLover data={data}/>
-        <ChoiceGender />
+      
+
       </div>
     );
   }

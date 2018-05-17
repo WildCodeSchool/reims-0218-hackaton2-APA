@@ -1,44 +1,14 @@
-import React,{Component} from 'react'
+import React from 'react'
 
-class ChoiceGender extends Component {
-  constructor() {
-    super()
-    this.state= {
-      type : ''
-    }
-  }
+const ChoiceGender = ({change, gender}) => 
+<div>
+<p>Gender :{gender}</p>
+<button onClick={ () => change('male') }
+  >Male</button>
+  <button onClick={ () => change('female') }
+  >Female</button>
 
-  displayMale(){
-    console.log('male')
-    //modifier le state
-    this.setState(
-      { type : this.state.type}
-    )
-  }
-  displayFemale(){
-    console.log('female')
-      //modifier le state
-      this.setState(
-      { type : this.state.type}
-    )
-    
-  }
+</div>
 
-  render(){
-      return(
-        <div>
-          <p>Gender :{this.state.type}</p>
-          <button onClick={ () => this.setState({
-            type : " Male"
-          })}
-            >Male</button>
-          <button onClick={ () => this.setState({
-            type : " Female"
-          })}
-          >Female</button>
-          </div>
-      );
-  }
 
-}
 export default ChoiceGender;
