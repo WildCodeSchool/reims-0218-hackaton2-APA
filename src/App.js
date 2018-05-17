@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Container } from 'reactstrap'
+//import { Button } from 'reactstrap';
 //import StarLover from './components/StarLover';
 import ChoiceGender from "./components/ChoiceGender";
 import ChoiceSpecie from "./components/ChoiceSpecie";
-import StarWarsApi from "./components/StarWarsApi";
+import Choice from "./components/Choice";
 import ListChoices from "./components/ListChoices";
 import ChoiceEye from "./components/ChoiceEye";
 import ChoiceSkin from "./components/ChoiceSkin";
+import { Container } from 'reactstrap'
 
 
 
@@ -21,7 +22,8 @@ class App extends Component {
       eyeColor: '',
       skinColor:'',
       dropDownEyeOpen:false,
-      dropDownSkinOpen:false
+      dropDownSkinOpen:false,
+      lovers: []
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
@@ -79,12 +81,12 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Container className="py-3">
-        <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin/>
-        <StarWarsApi />
-        <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
-        <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
-        <ChoiceEye dropDownEyeOpen={this.state.dropDownEyeOpen} changeEye={this.changeEye} toggleEyeFunction={this.toggleEye}/>
-        <ChoiceSkin dropDownSkinOpen={this.state.dropDownSkinOpen} changeSkin={this.changeSkin} toggleSkinFunction={this.toggleSkin}/>
+          <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
+          <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
+          <ChoiceEye change={this.changeEye} eye={this.state.eye}/>
+          <ChoiceSkin change={this.changeSkin} skin={this.state.skin}/>
+          <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eye} skin={this.state.skin}/>
+          <Choice gender={this.state.gender}/>
         </Container>
       </div>
     );
