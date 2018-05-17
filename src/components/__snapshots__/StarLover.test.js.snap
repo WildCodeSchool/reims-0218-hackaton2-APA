@@ -4,6 +4,12 @@ exports[`renders correctly 1`] = `
 <li
   className="list-group-item"
 >
-  Article
+  <p />
+  <p />
+  <p />
+  <p />
+  <p />
+  <p />
+  <p />
 </li>
 `;
