@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import ChoiceGender from './ChoiceGender';
+import ChoiceSpecie from './ChoiceSpecie';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<ChoiceGender />, div);
+  ReactDOM.render(<ChoiceSpecie />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -13,11 +13,11 @@ it('renders correctly', () => {
   
   const props = {
 
-     gender : ["male", "female"]
+     specie : ["human", "droid"]
   }
   
   const tree = renderer
-    .create(<ChoiceGender {...props} />)
+    .create(<ChoiceSpecie {...props} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

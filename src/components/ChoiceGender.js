@@ -29,11 +29,11 @@ class ChoiceGender extends Component {
         <div>
           <p>Gender :{this.state.type}</p>
           <button onClick={ () => this.setState({
-            type : "Male"
+            type : " Male"
           })}
             >Male</button>
           <button onClick={ () => this.setState({
-            type : "Female"
+            type : " Female"
           })}
           >Female</button>
           </div>

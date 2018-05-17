@@ -4,6 +4,7 @@ import "./App.css";
 //import StarLover from './components/StarLover';
 import ListStarLover from "./components/ListStarLover";
 import ChoiceGender from "./components/ChoiceGender";
+import ChoiceSpecie from "./components/ChoiceSpecie";
 
 const data = [
   {
@@ -56,6 +57,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <ChoiceGender />
+        <ChoiceSpecie />
         <ListStarLover data={data}/>
         <ChoiceGender />
       </div>

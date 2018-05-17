@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 
-class ChoiceGender extends Component {
+class ChoiceSpecie extends Component {
   constructor() {
     super()
     this.state= {
@@ -8,15 +8,15 @@ class ChoiceGender extends Component {
     }
   }
 
-  displayMale(){
-    console.log('male')
+  displayHuman(){
+    console.log('human')
     //modifier le state
     this.setState(
-      { type : this.state.type}
+      { specie : this.state.type}
     )
   }
-  displayFemale(){
-    console.log('female')
+  displayDroid(){
+    console.log('droid')
       //modifier le state
       this.setState(
       { type : this.state.type}
@@ -27,18 +27,18 @@ class ChoiceGender extends Component {
   render(){
       return(
         <div>
-          <p>Gender :{this.state.type}</p>
+          <p>Specie :{this.state.type}</p>
           <button onClick={ () => this.setState({
-            type : "Male"
+            type : " Human"
           })}
-            >Male</button>
+            >Human</button>
           <button onClick={ () => this.setState({
-            type : "Female"
+            type : " Droid"
           })}
-          >Female</button>
+          >Droid</button>
           </div>
       );
   }
 
 }
-export default ChoiceGender;
+export default ChoiceSpecie;
