@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 //import StarLover from './components/StarLover';
 import ListStarLover from "./components/ListStarLover";
+import ChoiceGender from "./components/ChoiceGender";
 
 const data = [
   {
@@ -54,7 +55,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <ChoiceGender />
         <ListStarLover data={data}/>
+        <ChoiceGender />
       </div>
     );
   }
