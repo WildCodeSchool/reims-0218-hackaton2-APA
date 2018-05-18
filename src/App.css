@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 70s linear;
+  height: 8px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(60deg); }
+  to { transform: rotate(-70deg); }
+}
+
+body{
+  background-image:url("/stars_sky_night_113553_3100x1740.jpg");
+  color: yellow;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#titlemodal {
+  font-size: 1.6em;
+}
+#textmodal {
+  font-size: 2em;
+}
+
+.bouttonmarron {
+  background-color: maroon;
+}
+
+.button1 {
+color: white;
+font-size: 2em;
+}
+
+.listchoices {
+  font-size: 0.6em;
+  color:yellow;
+}
+
+.taliste {
+  font-size:1.3em;
+  color:yellow;
+}
+
+/*planet saturn*/
+
+.planet{
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow: 0 0 60px -20px rgba(3, 255, 37, 0.72), -14px -15px 40px -10px rgba(255, 238, 191, 0.23);
+  left:85%;
+  top:40%;
+  margin:-150px;
+}
+.planet .mask{
+  width:100%;
+  height:100%;
+  position: absolute;
+  box-shadow:inset -10px -10px 40px #251303, inset 10px 10px 30px -10px rgba(255, 204, 159, 0.6);
+  border-radius:50%;
+}
+.planet .background{
+  animation: translateBackground 40s infinite linear;  
+  background:url(http://artem.anmedio.ru/dev/planet/mars.jpg) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+}
+.planet .clouds{
+  background:url(http://artem.anmedio.ru/dev/planet/clouds.png) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  animation: translateBackground 20s infinite linear;
+  opacity: 0.8;
+}
+.planet .wrap{
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  animation: rotatePlanet 150s infinite linear;  
+}
+@keyframes translateBackground{
+  0%{
+    background-position-x:0;
+  }
+  100%{
+    background-position-x:-600px;
+  }
+}
+@keyframes rotatePlanet{
+  0%{
+    transform:rotateZ(0);
+  }
+  100%{
+    transform:rotateZ(-360deg);
+  }
+}
+

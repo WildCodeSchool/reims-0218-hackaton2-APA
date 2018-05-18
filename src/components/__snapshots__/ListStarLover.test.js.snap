@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<ul
+  className="list-group"
+>
+  <li
+    className="list-group-item"
+  >
+    <p />
+    <p>
+      MONSIEUR TARTE
+    </p>
+    <p>
+      male
+    </p>
+    <p>
+      human
+    </p>
+    <p>
+      blond
+    </p>
+    <p>
+      blue
+    </p>
+    <p>
+      light
+    </p>
+  </li>
+  <li
+    className="list-group-item"
+  >
+    <p />
+    <p>
+      MONSIEUR FISCHER
+    </p>
+    <p>
+      male
+    </p>
+    <p>
+      human
+    </p>
+    <p>
+      blond
+    </p>
+    <p>
+      blue
+    </p>
+    <p>
+      light
+    </p>
+  </li>
+  <li
+    className="list-group-item"
+  >
+    <p />
+    <p>
+      MONSIEUR DESCHAMPS
+    </p>
+    <p>
+      male
+    </p>
+    <p>
+      human
+    </p>
+    <p>
+      blond
+    </p>
+    <p>
+      blue
+    </p>
+    <p>
+      light
+    </p>
+  </li>
+  <li
+    className="list-group-item"
+  >
+    <p />
+    <p>
+      MONSIEUR LUKE
+    </p>
+    <p>
+      male
+    </p>
+    <p>
+      human
+    </p>
+    <p>
+      blond
+    </p>
+    <p>
+      blue
+    </p>
+    <p>
+      light
+    </p>
+  </li>
+</ul>
+`;
