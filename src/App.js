@@ -99,6 +99,13 @@ class App extends Component {
           <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
           <ChoiceSpecie change={this.changeSpecie} species={this.state.species} />
           <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
+          <div class="planet"> 
+            <div class="wrap">
+            <div class="background"></div>
+            <div class="clouds"></div>   
+          </div>
+          <div class="mask"></div>
+          </div>
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
           <Button onClick={this.filter} >Validate your choice</Button>
           <StarLover message={this.state.message} selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
