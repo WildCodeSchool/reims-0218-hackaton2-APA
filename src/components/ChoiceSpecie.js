@@ -2,12 +2,12 @@ import React from 'react'
 import { Button } from 'reactstrap';
 
 
-const ChoiceSpecie = ({change, specie}) => 
+const ChoiceSpecie = ({change, species}) => 
 <div>
 <p>Choisissez votre espèce :</p>
-<Button className="mb-2 mr-2" size="lg" color="success" disable  onClick={ () => change('Human') }
+<Button className="mb-2 mr-2" size="lg" color="success" onClick={ () => change('human') }
   >Human</Button>
-  <Button className="mb-2" size="lg" color="warning" disable  onClick={ () => change('Droid') }
+  <Button className="mb-2" size="lg" color="warning"  onClick={ () => change('droid') }
   >Droid</Button>
 
 </div>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import logostarwars from "./images/logostarwars.png"
 import "./App.css";
 //import { Button } from 'reactstrap';
@@ -10,7 +9,7 @@ import AllChoices from "./components/AllChoices";
 import ListChoices from "./components/ListChoices";
 import ChoiceEye from "./components/ChoiceEye";
 import ChoiceSkin from "./components/ChoiceSkin";
-import { Container } from 'reactstrap'
+import { Container, Button } from 'reactstrap'
 
 
 
@@ -19,19 +18,36 @@ class App extends Component {
     super()
     this.state= {
       gender : '',
-      specie: '',
+      species: '',
       eyeColor: '',
       skinColor:'',
-      dropDownEyeOpen:false,
-      dropDownSkinOpen:false,
-      choice:[]
+      peoples: [],
+      selectedPeoples: [],
+
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
     this.changeEye=this.changeEye.bind(this)
-    this.changeSkin=this.changeSkin.bind(this)
-    this.toggleEye=this.toggleEye.bind(this)
-    this.toggleSkin=this.toggleSkin.bind(this)
+    this.filter=this.filter.bind(this)
+  }
+
+  componentDidMount() {
+    const url = 'https://akabab.github.io/starwars-api/api/all.json'
+    fetch(url)
+    .then(res => res.json())
+    .then(rest => this.setState({peoples: rest}))//stocker rest dans le state
+  }
+
+  filter() {
+  //filtrer selon les critères
+  this.setState(prevState => ({
+    selectedPeoples: prevState.peoples
+      .filter(people => this.state.gender == '' || people.gender == this.state.gender)
+      .filter(people => this.state.species == '' || people.species == this.state.species)
+      .filter(people => this.state.eyeColor == '' || people.eyeColor == this.state.eyeColor)
+
+  }))
+    
   }
 
   changeGender(gender) {
@@ -40,36 +56,18 @@ class App extends Component {
     })
   }
 
-  changeSpecie(specie) {
+  changeSpecie(species) {
     this.setState ({
-      specie: specie
+      species: species
     })
   }
 
-  changeEye(eye) {
+  changeEye(eyeColor) {
     this.setState ({
-      eye: eye
+      eyeColor: eyeColor
     })
   }
 
-  changeSkin(skin) {
-    this.setState ({
-      skin: skin
-    })
-  }
-
-  toggleEye() {
-    this.setState(prevState => ({
-        dropdownEyeOpen: !prevState.dropdownEyeOpen
-      }))
-  }
-
-  toggleSkin() {
-    this.setState(prevState => ({
-        dropdownSkinOpen: !prevState.dropdownSkinOpen
-      }))
-  }
-  
   changeChoice(choice) {
     this.setState ({
       choice: choice
@@ -83,11 +81,10 @@ class App extends Component {
         <img src={logostarwars} alt="logostarwars" style={{width: '750px', height: '250px'}} />
         <Container className="py-3">
           <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
-          <ChoiceSpecie change={this.changeSpecie} specie={this.state.specie} />
-          <ChoiceEye dropdownEyeOpen={this.state.dropDownEyeOpen} toggleEyeFunction={this.toggleEye} changeEye={this.changeEye}/>
-          <ChoiceSkin dropdownSkinOpen={this.state.dropDownSkinOpen} toggleSkinFunction={this.toggleSkin} changeSkin={this.changeSkin}/>
-          <ListChoices gender={this.state.gender} specie={this.state.specie} eye={this.state.eyeColor} skin={this.state.skinColor}/>
-          <AllChoices change={this.changeChoice} choice={this.state.choice} gender={this.state.gender} specie={this.state.specie} eye={this.state.eyeColor} skin={this.state.skinColor}/>
+          <ChoiceSpecie change={this.changeSpecie} species={this.state.species} />
+          <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
+          <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
+          <Button onClick={this.filter} >Valider</Button>
         </Container>
       </div>
     );
