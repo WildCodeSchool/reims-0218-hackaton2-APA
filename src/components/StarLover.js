@@ -1,12 +1,20 @@
 import React from 'react'
-import { ListGroupItem } from 'reactstrap'
+import { ListGroupItem, ListGroup } from 'reactstrap'
 
-const StarLover = ({ id, name, gender, species, eyeColor }) => <ListGroupItem>
-    <p>{ id }</p>
-    <p>{ name }</p>
-    <p>{ gender }</p>
-    <p>{ species }</p>
-    <p>{ eyeColor }</p>
-</ListGroupItem>
-
+const StarLover = ({ selectedPeoples}) => {
+if (typeof(selectedPeoples[0]) !== 'undefined') {
+return (
+<ListGroup>
+    <ListGroupItem>{ selectedPeoples[0].name }</ListGroupItem>
+    <ListGroupItem>is a { selectedPeoples[0].gender }</ListGroupItem>
+    <ListGroupItem>is a { selectedPeoples[0].species }</ListGroupItem>
+    <ListGroupItem>with { selectedPeoples[0].eyeColor } eyes</ListGroupItem>
+</ListGroup>)
+}
+else {
+return (
+    <div>Vous êtes trop difficile à contenter</div>
+)
+}
+}
 export default StarLover
