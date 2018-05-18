@@ -16,6 +16,8 @@ const ChoiceGender = ({change, gender}) =>
     >Green</Button>
     <Button className="mb-2 mr-2" size="lg" color="warning" onClick={ () => change('orange') }
     >orange</Button>
+    <Button className="mb-2 mr-2" size="lg" color="warning" onClick={ () => change('purple') }
+    >purple</Button>
 </div>
 
 
