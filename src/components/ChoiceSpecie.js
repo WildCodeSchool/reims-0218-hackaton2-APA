@@ -10,11 +10,11 @@ const ChoiceSpecie = ({change, species}) =>
 <Button className="mb-2 mr-2" size="lg" color="link"  outline onClick={ () => change('droid') }
   >Droid</Button>
 <Button className="mb-2 mr-2" size="lg" color="link"  outline onClick={ () => change('wookiee') }
-  >wookiee</Button>
+  >Wookiee</Button>
 <Button className="mb-2 mr-2" size="lg" color="link"  outline onClick={ () => change('rodian') }
-  >rodian</Button>
+  >Rodian</Button>
 <Button className="mb-2 mr-2" size="lg" color="link"  outline onClick={ () => change('hutt') }
-  >hutt</Button>
+  >Hutt</Button>
 </div>
 
 
