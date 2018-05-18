@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
 import logostarwars from "./images/logostarwars.png"
 import "./App.css";
 import ChoiceGender from "./components/ChoiceGender";
@@ -90,6 +91,10 @@ class App extends Component {
     )}
   }  
 
+  displaySecondModal() {
+    ReactDOM.render(<App />, document.getElementById('root'))
+  }
+
   render() {
     return (
       <div className="App">
@@ -102,7 +107,8 @@ class App extends Component {
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
           <Button onClick={this.filter} >Validate your choice</Button>
           <StarLover message={this.state.message} selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
-          <ModalExample />
+          <ModalExample next={this.displaySecondModal}/>
+          <div id="deuxieme modale"></div>
         </Container>
       </div>
     );
