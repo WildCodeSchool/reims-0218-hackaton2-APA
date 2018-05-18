@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import darkvador from "../images/darkvador.jpg";
-import ModalExample2 from './ModalExample2'
 
 class ModalExample extends React.Component {
   constructor(props) {
@@ -19,8 +18,6 @@ class ModalExample extends React.Component {
     }); 
   }
 
-
-
   render() {
     return (
       <div>
@@ -32,7 +29,7 @@ class ModalExample extends React.Component {
             <p id="textmodal" className="text-danger" size="lg">I AM YOUR FATHER SSHHHHHH</p>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={ModalExample2}>Call Resistance</Button>
+            <Button color="secondary" onClick={this.props.next}>Call Resistance</Button>
           </ModalFooter>
         </Modal>
       </div>
