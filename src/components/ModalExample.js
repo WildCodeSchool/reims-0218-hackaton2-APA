@@ -22,7 +22,7 @@ class ModalExample extends React.Component {
     return (
       <div>
         <Button color="danger" className="mb-5" onClick={this.toggle}>New search</Button>
-        <Modal className="text-center" isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal className="text-center App-logo" isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
             <p id="titlemodal" className="text-danger" size="lg">----WARNING----</p>
             <p id="imgmodal" className="text-danger"><img src={darkvador} alt="dk" style={{width: '250px', height: '250px'}}/></p>

@@ -9,6 +9,7 @@ import ChoiceEye from "./components/ChoiceEye";
 import { Container, Button } from 'reactstrap'
 import StarLover from "./components/StarLover";
 import ModalExample from "./components/ModalExample";
+import ModalExample2 from "./components/ModalExample2";
 
 
 
@@ -92,7 +93,7 @@ class App extends Component {
   }  
 
   displaySecondModal() {
-    ReactDOM.render(<App />, document.getElementById('root'))
+    ReactDOM.render(<ModalExample2 />, document.getElementById('root'))
   }
 
   render() {
@@ -104,12 +105,12 @@ class App extends Component {
           <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
           <ChoiceSpecie change={this.changeSpecie} species={this.state.species} />
           <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
-          <div class="planet"> 
-            <div class="wrap">
-            <div class="background"></div>
-            <div class="clouds"></div>   
+          <div className="planet"> 
+            <div className="wrap">
+            <div className="background"></div>
+            <div className="clouds"></div>   
           </div>
-          <div class="mask"></div>
+          <div className="mask"></div>
           </div>
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
           <Button onClick={this.filter} >Validate your choice</Button>

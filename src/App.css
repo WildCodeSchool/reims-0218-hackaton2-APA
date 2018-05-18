@@ -23,8 +23,8 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(50deg); }
-  to { transform: rotate(-90deg); }
+  from { transform: rotate(60deg); }
+  to { transform: rotate(-70deg); }
 }
 
 body{
@@ -120,3 +120,4 @@ font-size: 2em;
     transform:rotateZ(-360deg);
   }
 }
+
