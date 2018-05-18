@@ -19,12 +19,14 @@ class App extends Component {
       eyeColor: '',
       peoples: [],
       selectedPeoples: [],
-
+      count: 0
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
     this.changeEye=this.changeEye.bind(this)
     this.filter=this.filter.bind(this)
+    this.increment=this.increment.bind(this)
+    this.decrement=this.decrement.bind(this)
   }
 
   componentDidMount() {
@@ -69,6 +71,24 @@ class App extends Component {
     })
   }
 
+  increment() {
+    //modifier le state
+    console.log(this.state.selectedPeoples.length)
+    console.log(this.state.count)
+    if (this.state.count <this.state.selectedPeoples.length) {
+      this.setState(
+        prevState => ({count: prevState.count + 1})
+      )}
+  }
+
+  decrement() {
+    //modifier le state SI l'êtat est supérieur à 0
+    if (this.state.count >0) {
+    this.setState(
+      prevState => ({count: prevState.count - 1})
+    )}
+  }  
+
   render() {
     return (
       <div className="App">
@@ -79,7 +99,7 @@ class App extends Component {
           <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
           <Button onClick={this.filter} >Valider</Button>
-          <StarLover selectedPeoples={this.state.selectedPeoples}   />
+          <StarLover selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
         </Container>
       </div>
     );
