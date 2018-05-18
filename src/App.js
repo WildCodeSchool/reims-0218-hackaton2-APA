@@ -21,7 +21,8 @@ class App extends Component {
       eyeColor: '',
       peoples: [],
       selectedPeoples: [],
-      count: 0
+      count: 0,
+      message: ''
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)
@@ -41,6 +42,7 @@ class App extends Component {
   filter() {
   //filtrer selon les critères
   this.setState(prevState => ({
+    message:'You are too difficult to please',
     selectedPeoples: prevState.peoples
       .filter(people => this.state.gender === '' || people.gender === this.state.gender)
       .filter(people => this.state.species === '' || people.species === this.state.species)
@@ -74,7 +76,7 @@ class App extends Component {
   }
 
   increment() {
-    if (this.state.count <this.state.selectedPeoples.length) {
+    if (this.state.count <this.state.selectedPeoples.length-1) {
       this.setState(
         prevState => ({count: prevState.count + 1})
       )}
@@ -99,7 +101,7 @@ class App extends Component {
           <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
           <Button onClick={this.filter} >Validate your choice</Button>
-          <StarLover selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
+          <StarLover message={this.state.message} selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
           <ModalExample />
         </Container>
       </div>

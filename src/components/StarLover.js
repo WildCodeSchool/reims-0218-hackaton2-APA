@@ -1,11 +1,11 @@
 import React from 'react'
 import { ListGroupItem, ListGroup, Col, Row, Button } from 'reactstrap'
 
-const StarLover = ({ selectedPeoples, increasing, decreasing, index }) => {
-if (typeof(selectedPeoples[0]) !== 'undefined') {
+const StarLover = ({ message,selectedPeoples, increasing, decreasing, index }) => {
+if (typeof(selectedPeoples[index]) !== 'undefined') {
 return (
 <ListGroup className="text-muted">
-    <p className="text-light mt-3">Vous avez {selectedPeoples.length} résultat(s)</p>
+    <p className="text-light mt-3">You have {selectedPeoples.length} result(s)</p>
     <Row>
         <Col sm="10" className="my-auto">
             <Row>
@@ -38,7 +38,7 @@ return (
 }
 else {
 return (
-    <div>You are too difficult to please</div>
+    <div>{message}</div>
 )}
 }
 export default StarLover
