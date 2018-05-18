@@ -21,6 +21,7 @@ class ModalExample2 extends React.Component {
     return (
       <div className="mt-5">
         <p className="text-center"><img src={forrest}  style={{width: '1250px', height: '750px'}} alt="rez"/></p>
+        <p size="5" className="text-center"> @TINGALACTIK</p>
       </div>
     );
   }
