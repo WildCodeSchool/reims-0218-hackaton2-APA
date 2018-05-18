@@ -30,7 +30,9 @@
 body{
   background-image:url("/stars_sky_night_113553_3100x1740.jpg");
   font-family: 'Star Jedi Outline';
-  color: white;
+  color: yellow;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 #titlemodal {
@@ -45,4 +47,16 @@ body{
 }
 
 .button1 {
-color: white}
+color: white;
+font-size: 2em;
+}
+
+.listchoices {
+  font-size: 0.6em;
+  color:yellow;
+}
+
+.taliste {
+  font-size:1.3em;
+  color:yellow;
+}

@@ -104,6 +104,7 @@ class App extends Component {
           <Button onClick={this.filter} >Valider</Button>
           <StarLover selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
           <ModalExample />
+
         </Container>
 
       </div>
