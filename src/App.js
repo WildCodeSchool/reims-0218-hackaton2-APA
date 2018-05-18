@@ -11,6 +11,7 @@ import ModalExample from "./components/ModalExample";
 
 
 
+
 class App extends Component {
   constructor() {
     super()
@@ -93,16 +94,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <img src={logostarwars} alt="logostarwars" style={{width: '750px', height: '250px'}} />
-        <Container className="py-3">
+        <Container className="py-3 App-logo">
+          <img src={logostarwars} alt="logostarwars" style={{width: '750px', height: '250px'}} />
+          <br/>
           <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
           <ChoiceSpecie change={this.changeSpecie} species={this.state.species} />
           <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
           <Button onClick={this.filter} >Valider</Button>
           <StarLover selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
+          <ModalExample />
         </Container>
-        <ModalExample />
+
       </div>
     );
   }
