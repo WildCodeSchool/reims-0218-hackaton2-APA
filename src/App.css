@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Star Jedi Outline';
-  src: url("./Starjout.ttf");
-}
-
 .App {
   text-align: center;
 }
@@ -34,7 +29,6 @@
 */
 body{
   background-image:url("/stars_sky_night_113553_3100x1740.jpg");
-  font-family: 'Star Jedi Outline';
   color: yellow;
   font-size: 2em;
   font-weight: bold;
@@ -63,5 +57,9 @@ font-size: 2em;
 
 .taliste {
   font-size:1.3em;
+  color:yellow;
+}
+
+ChoiceGender {
   color:yellow;
 }
