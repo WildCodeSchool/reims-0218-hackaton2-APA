@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import logostarwars from "./images/logostarwars.png"
 import "./App.css";
-//import { Button } from 'reactstrap';
-//import StarLover from './components/StarLover';
 import ChoiceGender from "./components/ChoiceGender";
 import ChoiceSpecie from "./components/ChoiceSpecie";
-import AllChoices from "./components/AllChoices";
 import ListChoices from "./components/ListChoices";
 import ChoiceEye from "./components/ChoiceEye";
-import ChoiceSkin from "./components/ChoiceSkin";
 import { Container, Button } from 'reactstrap'
+import StarLover from "./components/StarLover";
 
 
 
@@ -20,7 +17,6 @@ class App extends Component {
       gender : '',
       species: '',
       eyeColor: '',
-      skinColor:'',
       peoples: [],
       selectedPeoples: [],
 
@@ -42,10 +38,9 @@ class App extends Component {
   //filtrer selon les critères
   this.setState(prevState => ({
     selectedPeoples: prevState.peoples
-      .filter(people => this.state.gender == '' || people.gender == this.state.gender)
-      .filter(people => this.state.species == '' || people.species == this.state.species)
-      .filter(people => this.state.eyeColor == '' || people.eyeColor == this.state.eyeColor)
-
+      .filter(people => this.state.gender === '' || people.gender === this.state.gender)
+      .filter(people => this.state.species === '' || people.species === this.state.species)
+      .filter(people => this.state.eyeColor === '' || people.eyeColor === this.state.eyeColor)
   }))
     
   }
@@ -77,7 +72,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       
         <img src={logostarwars} alt="logostarwars" style={{width: '750px', height: '250px'}} />
         <Container className="py-3">
           <ChoiceGender change={this.changeGender} gender={this.state.gender}  />
@@ -85,6 +79,7 @@ class App extends Component {
           <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
           <Button onClick={this.filter} >Valider</Button>
+          <StarLover selectedPeoples={this.state.selectedPeoples}   />
         </Container>
       </div>
     );
@@ -92,3 +87,5 @@ class App extends Component {
 }
 
 export default App;
+
+//name={this.state.name} gender={this.state.gender} species={this.state.species} eyeColor={this.state.eyeColor}

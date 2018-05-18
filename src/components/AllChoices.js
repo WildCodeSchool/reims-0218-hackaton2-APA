@@ -5,7 +5,7 @@ class Choice extends Component {
   
 
   render() {
-    return <div>Ta liste intergalactique sera : </div>
+    return <div>Coucou</div>
   }
 
 
