@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 
 const ChoiceGender = ({change, gender}) => 
 <div>
-  <p>Choisissez votre genre :</p>
+  <p>Choose your preferred gender: </p>
   <Button className="mb-2 mr-2 bouton1" size="lg" outline color="link"  onClick={ () => change('male') }
     >Male</Button>
   <Button className="mb-2 mr-2 bouton1" size="lg" outline color="link" onClick={ () => change('female') }

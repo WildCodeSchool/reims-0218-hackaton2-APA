@@ -38,7 +38,7 @@ return (
 }
 else {
 return (
-    <div>Vous êtes trop difficile à contenter</div>
+    <div>You are too difficult to please</div>
 )}
 }
 export default StarLover

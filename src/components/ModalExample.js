@@ -23,15 +23,15 @@ class ModalExample extends React.Component {
   render() {
     return (
       <div>
-        <Button color="danger" className="mb-5" onClick={this.toggle}>Nouvelle recherche</Button>
+        <Button color="danger" className="mb-5" onClick={this.toggle}>New search</Button>
         <Modal className="text-center" isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
             <p id="titlemodal" className="text-danger" size="lg">----WARNING----</p>
             <p id="imgmodal" className="text-danger"><img src={darkvador} alt="dk" style={{width: '250px', height: '250px'}}/></p>
-            <p id="textmodal" className="text-danger" size="lg">JE SUIIIIS TON PERE</p>
+            <p id="textmodal" className="text-danger" size="lg">I AM YOUR FATHER SSHHHHHH</p>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>Appeler la Résistance</Button>
+            <Button color="secondary" onClick={this.toggle}>Call Resistance</Button>
           </ModalFooter>
         </Modal>
       </div>

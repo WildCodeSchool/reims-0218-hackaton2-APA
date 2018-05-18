@@ -35,7 +35,7 @@ class App extends Component {
     const url = 'https://akabab.github.io/starwars-api/api/all.json'
     fetch(url)
     .then(res => res.json())
-    .then(rest => this.setState({peoples: rest}))//stocker rest dans le state
+    .then(rest => this.setState({peoples: rest})) // insert reading of the api in the state
   }
 
   filter() {
@@ -74,9 +74,6 @@ class App extends Component {
   }
 
   increment() {
-    //modifier le state
-    console.log(this.state.selectedPeoples.length)
-    console.log(this.state.count)
     if (this.state.count <this.state.selectedPeoples.length) {
       this.setState(
         prevState => ({count: prevState.count + 1})
@@ -84,7 +81,7 @@ class App extends Component {
   }
 
   decrement() {
-    //modifier le state SI l'êtat est supérieur à 0
+    // increment only if count more than zero
     if (this.state.count >0) {
     this.setState(
       prevState => ({count: prevState.count - 1})
@@ -101,12 +98,10 @@ class App extends Component {
           <ChoiceSpecie change={this.changeSpecie} species={this.state.species} />
           <ChoiceEye  change={this.changeEye} eyeColor={this.state.eyeColor}/>
           <ListChoices gender={this.state.gender} species={this.state.species} eye={this.state.eyeColor} skin={this.state.skinColor}/>
-          <Button onClick={this.filter} >Valider</Button>
+          <Button onClick={this.filter} >Validate your choice</Button>
           <StarLover selectedPeoples={this.state.selectedPeoples} index={this.state.count} decreasing={this.decrement} increasing={this.increment}/>
           <ModalExample />
-
         </Container>
-
       </div>
     );
   }

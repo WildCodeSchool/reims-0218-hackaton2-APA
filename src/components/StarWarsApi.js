@@ -7,7 +7,6 @@ class StarWarsApi extends Component {
   }
 
   componentDidMount() {
-    console.log('StarLover did mount')
     const url = 'https://akabab.github.io/starwars-api/api/all.json'
     fetch(url)
     .then(res => res.json())
