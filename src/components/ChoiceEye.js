@@ -3,17 +3,17 @@ import { Button } from 'reactstrap';
 
 const ChoiceGender = ({change, gender}) => 
 <div>
-  <p>Votre regard ténébreux préféré :</p>
+  <p>Your favorite gloomy look :</p>
   <Button className="mb-2 mr-2 bouttonmarron" size="lg" onClick={ () => change('brown') }
-    >Marron</Button>
+    >Brown</Button>
   <Button className="mb-2 mr-2" size="lg" color="primary" onClick={ () => change('blue') }
-    >Bleu</Button>
+    >Blue</Button>
     <Button className="mb-2 mr-2" size="lg" color="warning" onClick={ () => change('yellow') }
-    >Jaune</Button>
+    >Yellow</Button>
     <Button className="mb-2 mr-2" size="lg" color="dark" onClick={ () => change('black') }
-    >Noir</Button>
+    >Black</Button>
     <Button className="mb-2 mr-2" size="lg" color="success" onClick={ () => change('green') }
-    >Vert</Button>
+    >Green</Button>
 </div>
 
 
