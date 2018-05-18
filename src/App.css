@@ -30,5 +30,12 @@
 body{
   background-image:url("/stars_sky_night_113553_3100x1740.jpg");
   font-family: 'Star Jedi Outline';
+  color: white;
 }
 
+#titlemodal {
+  font-size: 3.6em;
+}
+#textmodal {
+  font-size: 2em;
+}
