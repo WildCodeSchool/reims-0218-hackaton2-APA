@@ -4,9 +4,10 @@ import { ListGroupItem, ListGroup, Col, Row, Button } from 'reactstrap'
 const StarLover = ({ selectedPeoples, increasing, decreasing, index }) => {
 if (typeof(selectedPeoples[0]) !== 'undefined') {
 return (
-<ListGroup>
+<ListGroup className="text-muted">
+    <p className="text-light mt-3">Vous avez {selectedPeoples.length} résultat(s)</p>
     <Row>
-        <Col sm="10">
+        <Col sm="10" className="my-auto">
             <Row>
                 <Col sm="1">
                     <Button onClick={increasing}>+</Button>
@@ -30,7 +31,7 @@ return (
             </Row>
         </Col>
         <Col sm="2">
-            <img src={ selectedPeoples[index].image } alt={ selectedPeoples[0].name } />
+            <img src={ selectedPeoples[index].image } alt={ selectedPeoples[0].name } style={{width: '250px', height: '250px'}} />
         </Col>
     </Row>
 </ListGroup>)

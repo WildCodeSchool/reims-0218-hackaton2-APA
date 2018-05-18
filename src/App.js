@@ -7,7 +7,7 @@ import ListChoices from "./components/ListChoices";
 import ChoiceEye from "./components/ChoiceEye";
 import { Container, Button } from 'reactstrap'
 import StarLover from "./components/StarLover";
-import ModalExample from "./components/ModalLol";
+import ModalExample from "./components/ModalExample";
 
 
 
@@ -19,13 +19,8 @@ class App extends Component {
       species: '',
       eyeColor: '',
       peoples: [],
-<<<<<<< HEAD
-      selectedPeoples: []
-
-=======
       selectedPeoples: [],
       count: 0
->>>>>>> a7afceb2d6e98e53c626dbdca4a1ea2ee7f16688
     }
     this.changeGender= this.changeGender.bind(this)
     this.changeSpecie= this.changeSpecie.bind(this)

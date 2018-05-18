@@ -6,10 +6,9 @@ const ListChoices = ({gender, species, skin, eye }) =>
       <Col sm="6">
         <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
           <CardTitle>Ta liste de critères: </CardTitle>
-          <CardText>{gender} <br/>
-                    {species} <br/>
-                    {eye} <br/>
-                    {skin} <br/>
+          <CardText>Genre: {gender} <br/>
+                    Espèce: {species} <br/>
+                    Couleur des yeux: {eye} <br/>
           </CardText>
 
         </Card>
